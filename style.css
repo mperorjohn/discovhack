@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #111;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo span {
+    color: #00ff6a; /* Green highlight */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #00ff6a;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(to bottom, #000, #003f1f);
+}
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #00ff6a;
+    animation: fadeIn 2s ease-in;
+}
+.hero p {
+    margin: 1rem 0;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    animation: slideUp 2s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #00ff6a;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn:hover {
+    background: #00cc55;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Sections */
+.section {
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+input, button {
+    padding: 0.7rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+}
+input {
+    width: 250px;
+    max-width: 90%;
+    border-radius: 5px;
+}
+button {
+    background: #00ff6a;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #00cc55;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #111;
+    margin-top: 2rem;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
